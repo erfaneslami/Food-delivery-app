@@ -27,3 +27,9 @@
   object-fit: cover;
   transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
 }
+
+@media (max-width: 570px) {
+  .header {
+    padding: 0 5%;
+  }
+}
