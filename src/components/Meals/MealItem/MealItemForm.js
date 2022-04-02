@@ -1,20 +1,24 @@
-import { useContext } from "react";
-import CartContext from "../../../Store/cart-context";
+import { useState } from "react";
 import Input from "../../UI/Input";
 import classes from "./MealItemForm.module.css";
 
 const MealItemForm = (props) => {
-  const ctx = useContext(CartContext);
+  const [isValid, setIsValid] = useState(true);
 
-  const addMealToCartHandler = (event) => {
+  const submitHandler = (event) => {
     event.preventDefault();
-    const amount = event.target[0].value;
-    const item = { name: props.name, price: props.price, amount: amount };
-    ctx.addItem(item);
+    const amount = +event.target[0].value;
+
+    if (`${amount}`.trim().length === 0 || amount < 1 || amount > 6) {
+      setIsValid(false);
+      return;
+    }
+
+    props.onAddMeal(amount);
   };
 
   return (
-    <form className={classes.form} onSubmit={addMealToCartHandler}>
+    <form className={classes.form} onSubmit={submitHandler}>
       <Input
         label="Amount"
         input={{
@@ -27,6 +31,7 @@ const MealItemForm = (props) => {
         }}
       />
       <button>+ Add</button>
+      {!isValid && <p>please enter valid amount</p>}
     </form>
   );
 };
