@@ -17,9 +17,7 @@
   font-size: 1rem;
   color: inherit;
   border: none;
-  border-bottom: 4px solid transparent;
   border-bottom: 2px solid #8a2b06;
-
   transition: all 0.1s ease-out;
 }
 
