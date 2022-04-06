@@ -1,17 +1,25 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.2rem;
   padding: 2rem;
+  height: auto;
+}
+
+.form div {
+  width: 100%;
 }
 
 .input {
+  width: 100%;
   padding: 0.7rem 1rem;
   font-family: inherit;
   font-size: 1rem;
   color: inherit;
   border: none;
+  border-bottom: 4px solid transparent;
   border-bottom: 2px solid #8a2b06;
+
   transition: all 0.1s ease-out;
 }
 
@@ -30,4 +38,15 @@
   font-family: inherit;
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+.holder {
+  color: transparent !important;
+}
+.errorMessage {
+  transition: all 0.2s;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #740000;
 }
