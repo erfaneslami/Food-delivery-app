@@ -1,0 +1,33 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.input {
+  padding: 0.7rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: inherit;
+  border: none;
+  border-bottom: 2px solid #8a2b06;
+  transition: all 0.1s ease-out;
+}
+
+.input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 4px solid #8a2b06;
+}
+
+.button {
+  padding: 0.7rem 1rem;
+  background-color: #8a2b06;
+  color: #eee;
+  border: none;
+  flex-basis: 1rem;
+  font-family: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
