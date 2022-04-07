@@ -8,6 +8,7 @@ import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
+  const [checkoutIsShown, setCheckoutIsShown] = useState(false);
 
   const showModalHandler = () => {
     setCartIsShown(true);
@@ -17,10 +18,17 @@ function App() {
     setCartIsShown(false);
   };
 
+  const showCheckout = () => {
+    setCheckoutIsShown(true);
+    hideModalHandler();
+  };
+
   return (
     <CartProvider>
-      <Checkout />
-      {cartIsShown && <Cart onCloseModal={hideModalHandler} />}
+      {checkoutIsShown && <Checkout />}
+      {cartIsShown && (
+        <Cart onCloseModal={hideModalHandler} onOrder={showCheckout} />
+      )}
       <Header onShowCart={showModalHandler} />
       <main>
         <Meals />

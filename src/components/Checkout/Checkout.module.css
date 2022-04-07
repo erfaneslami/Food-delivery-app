@@ -27,9 +27,20 @@
   border-bottom: 4px solid #8a2b06;
 }
 
-.button {
+.button-main {
   padding: 0.7rem 1rem;
   background-color: #8a2b06;
+  color: #eee;
+  border: none;
+  flex-basis: 1rem;
+  font-family: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.button-cancel {
+  padding: 0.7rem 1rem;
+  background-color: #ad0404;
   color: #eee;
   border: none;
   flex-basis: 1rem;

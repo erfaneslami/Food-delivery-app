@@ -77,8 +77,11 @@ const Checkout = () => {
           </p>
         </div>
 
-        <button type="submit" className={classes.button}>
+        <button type="submit" className={classes["button-main"]}>
           order
+        </button>
+        <button type="button" className={classes["button-cancel"]}>
+          Back to Cart
         </button>
       </form>
     </Modal>
