@@ -1,6 +1,6 @@
 import classes from "./Checkout.module.css";
 import { useForm } from "react-hook-form";
-import Modal from "../UI/Modal";
+import Modal from "../../UI/Modal";
 
 const Checkout = (props) => {
   const { register, handleSubmit, formState } = useForm({
