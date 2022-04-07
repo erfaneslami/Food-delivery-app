@@ -11,7 +11,7 @@ const Checkout = (props) => {
   const { errors } = formState;
 
   const submitHandler = (formData) => {
-    console.log(formData);
+    props.onGetUserData(formData);
   };
 
   const messageCls = `${classes.errorMessage} ${
@@ -25,7 +25,7 @@ const Checkout = (props) => {
   }`;
 
   return (
-    <Modal>
+    <Modal onClose={props.onCloseModal}>
       <form className={classes.form} onSubmit={handleSubmit(submitHandler)}>
         <div>
           <input

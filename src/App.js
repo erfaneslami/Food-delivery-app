@@ -17,11 +17,13 @@ function App() {
 
   return (
     <CartProvider>
-      <Order
-        cartIsShown={cartIsShown}
-        onHideModal={hideModalHandler}
-        onShowCart={showModalHandler}
-      />
+      {cartIsShown && (
+        <Order
+          cartIsShown={cartIsShown}
+          onHideModal={hideModalHandler}
+          onShowCart={showModalHandler}
+        />
+      )}
       <Header onShowCart={showModalHandler} />
       <main>
         <Meals />
