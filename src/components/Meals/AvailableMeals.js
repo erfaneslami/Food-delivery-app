@@ -27,6 +27,30 @@ const DUMMY_MEALS = [
     description: "Healthy...and green...",
     price: 18.99,
   },
+  {
+    id: "m5",
+    name: "Pizza",
+    description: "meat with vegetables",
+    price: 25.99,
+  },
+  {
+    id: "m6",
+    name: "French Frize",
+    description: "chirps ...",
+    price: 5.99,
+  },
+  {
+    id: "m7",
+    name: "Coca",
+    description: "Cold Coca with Ice ",
+    price: 5.99,
+  },
+  {
+    id: "m8",
+    name: "Coca Zero",
+    description: "Cold Coca Zero with Ice ",
+    price: 5.99,
+  },
 ];
 
 const AvailableMeals = () => {
