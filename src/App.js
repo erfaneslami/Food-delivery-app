@@ -23,9 +23,14 @@ function App() {
     hideModalHandler();
   };
 
+  const hideCheckoutHandler = () => {
+    setCheckoutIsShown(false);
+    showModalHandler();
+  };
+
   return (
     <CartProvider>
-      {checkoutIsShown && <Checkout />}
+      {checkoutIsShown && <Checkout onCancel={hideCheckoutHandler} />}
       {cartIsShown && (
         <Cart onCloseModal={hideModalHandler} onOrder={showCheckout} />
       )}

@@ -2,7 +2,7 @@ import classes from "./Checkout.module.css";
 import { useForm } from "react-hook-form";
 import Modal from "../UI/Modal";
 
-const Checkout = () => {
+const Checkout = (props) => {
   const { register, handleSubmit, formState } = useForm({
     mode: "onTouched",
     defaultValues: { name: "", address: "", phone: "" },
@@ -10,7 +10,6 @@ const Checkout = () => {
 
   const { errors } = formState;
 
-  console.log(errors);
   const submitHandler = (formData) => {
     console.log(formData);
   };
@@ -24,6 +23,7 @@ const Checkout = () => {
   const phoneCls = `${classes.errorMessage} ${
     errors.phone ? "" : classes.holder
   }`;
+
   return (
     <Modal>
       <form className={classes.form} onSubmit={handleSubmit(submitHandler)}>
@@ -80,7 +80,11 @@ const Checkout = () => {
         <button type="submit" className={classes["button-main"]}>
           order
         </button>
-        <button type="button" className={classes["button-cancel"]}>
+        <button
+          type="button"
+          className={classes["button-cancel"]}
+          onClick={props.onCancel}
+        >
           Back to Cart
         </button>
       </form>
